@@ -187,10 +187,12 @@
 	     python-vobject
 	     python-werkzeug
 	     python-xlsxwriter
-	     python-xlwt))
+	     python-xlwt
+         python-xlrd))
       (home-page "")
       (synopsis "")
       (description "")
-      (license #f))))
+      (license #f)
+    )))
 
 python-odoo
