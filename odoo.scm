@@ -142,6 +142,24 @@
     (description "[UNMAINTAINED] Python module to validate VAT numbers")
     (license #f)))
 
+(define-public python-num2words
+  (package
+    (name "python-num2words")
+    (version "0.5.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (pypi-uri "num2words" version))
+       (sha256
+        (base32 "1kq948daphzcpl4islxjccza39kkpjzwwl4l8ifdg45zzcb4f1m3"))))
+    (build-system pyproject-build-system)
+    (arguments (list #:tests? #f))
+    (propagated-inputs (list python-docopt))
+    (home-page "https://github.com/savoirfairelinux/num2words")
+    (synopsis "Modules to convert numbers to words. Easily extensible.")
+    (description "Modules to convert numbers to words.  Easily extensible.")
+    (license #f)))
+
 (define-public python-odoo
   (let ((revision "0")
 	(commit "70d64e3235735a659abb6ac06854ce43347320e0"))
@@ -190,7 +208,8 @@
 	     python-werkzeug
 	     python-xlsxwriter
 	     python-xlwt
-             python-xlrd))
+             python-xlrd
+	     python-num2words))
       (home-page "")
       (synopsis "")
       (description "")
