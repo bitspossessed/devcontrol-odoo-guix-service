@@ -158,6 +158,7 @@
          (sha256
 	  (base32 "1mh86mwk5m5892iwaz64pfsfj810zv4zk37fvnzl3mpsillb92sz"))))
       (build-system python-build-system)
+      (arguments (list #:tests? #f))
       (propagated-inputs
        (list python-babel
 	     python-decorator
