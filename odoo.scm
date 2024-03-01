@@ -183,6 +183,7 @@
 	     python-qrcode
 	     python-reportlab
 	     python-requests
+         python-stdnum
 	     python-zeep
 	     python-vobject
 	     python-werkzeug
