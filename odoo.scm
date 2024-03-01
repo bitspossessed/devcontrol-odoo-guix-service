@@ -125,23 +125,6 @@
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-26))
 
-(define-public python-vatnumber
-  (package
-    (name "python-vatnumber")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (pypi-uri "vatnumber" version))
-       (sha256
-        (base32 "0yrc5w5139nlbnzgsi6k3smqrayhspgpwd4axf6ns1znrymrr7jf"))))
-    (build-system pyproject-build-system)
-    (propagated-inputs (list python-stdnum))
-    (home-page "http://code.google.com/p/vatnumber/")
-    (synopsis "[UNMAINTAINED] Python module to validate VAT numbers")
-    (description "[UNMAINTAINED] Python module to validate VAT numbers")
-    (license #f)))
-
 (define-public python-num2words
   (package
     (name "python-num2words")
