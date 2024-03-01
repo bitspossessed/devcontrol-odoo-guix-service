@@ -150,12 +150,12 @@
       (version "16.0")
       (source
        (origin
-	 (method git-fetch)
-	 (uri (git-reference
+         (method git-fetch)
+         (uri (git-reference
 	       (url "https://github.com/oca/ocb")
 	       (commit commit)))
-	 (file-name (git-file-name name version))
-	 (sha256
+         (file-name (git-file-name name version))
+         (sha256
 	  (base32 "1mh86mwk5m5892iwaz64pfsfj810zv4zk37fvnzl3mpsillb92sz"))))
       (build-system python-build-system)
       (propagated-inputs
@@ -183,17 +183,16 @@
 	     python-qrcode
 	     python-reportlab
 	     python-requests
-         python-stdnum
+             python-stdnum
 	     python-zeep
 	     python-vobject
 	     python-werkzeug
 	     python-xlsxwriter
 	     python-xlwt
-         python-xlrd))
+             python-xlrd))
       (home-page "")
       (synopsis "")
       (description "")
-      (license #f)
-    )))
+      (license #f))))
 
 python-odoo
