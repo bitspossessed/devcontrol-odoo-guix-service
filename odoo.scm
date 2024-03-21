@@ -159,7 +159,7 @@
          (sha256
 	  (base32 "1mh86mwk5m5892iwaz64pfsfj810zv4zk37fvnzl3mpsillb92sz"))))
       (build-system python-build-system)
-      (arguments (list #:tests? #f))
+      ; (arguments (list #:tests? #f))
       (propagated-inputs
        (list python-babel
 	     python-decorator
@@ -185,14 +185,15 @@
 	     python-qrcode
 	     python-reportlab
 	     python-requests
-             python-stdnum
+       python-stdnum
 	     python-zeep
 	     python-vobject
 	     python-werkzeug
 	     python-xlsxwriter
 	     python-xlwt
-             python-xlrd
-	     python-num2words))
+       python-xlrd
+	     python-num2words
+       python-freezegun))
       (home-page "")
       (synopsis "")
       (description "")
