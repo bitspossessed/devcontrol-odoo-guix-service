@@ -125,21 +125,22 @@
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-26))
 
-(define-public python-vatnumber
+(define-public python-num2words
   (package
-    (name "python-vatnumber")
-    (version "1.2")
+    (name "python-num2words")
+    (version "0.5.13")
     (source
      (origin
        (method url-fetch)
-       (uri (pypi-uri "vatnumber" version))
+       (uri (pypi-uri "num2words" version))
        (sha256
-        (base32 "0yrc5w5139nlbnzgsi6k3smqrayhspgpwd4axf6ns1znrymrr7jf"))))
+        (base32 "1kq948daphzcpl4islxjccza39kkpjzwwl4l8ifdg45zzcb4f1m3"))))
     (build-system pyproject-build-system)
-    (propagated-inputs (list python-stdnum))
-    (home-page "http://code.google.com/p/vatnumber/")
-    (synopsis "[UNMAINTAINED] Python module to validate VAT numbers")
-    (description "[UNMAINTAINED] Python module to validate VAT numbers")
+    (arguments (list #:tests? #f))
+    (propagated-inputs (list python-docopt))
+    (home-page "https://github.com/savoirfairelinux/num2words")
+    (synopsis "Modules to convert numbers to words. Easily extensible.")
+    (description "Modules to convert numbers to words.  Easily extensible.")
     (license #f)))
 
 (define-public python-odoo
@@ -150,14 +151,15 @@
       (version "16.0")
       (source
        (origin
-	 (method git-fetch)
-	 (uri (git-reference
+         (method git-fetch)
+         (uri (git-reference
 	       (url "https://github.com/oca/ocb")
 	       (commit commit)))
-	 (file-name (git-file-name name version))
-	 (sha256
+         (file-name (git-file-name name version))
+         (sha256
 	  (base32 "1mh86mwk5m5892iwaz64pfsfj810zv4zk37fvnzl3mpsillb92sz"))))
       (build-system python-build-system)
+      (arguments (list #:tests? #f))
       (propagated-inputs
        (list python-babel
 	     python-decorator
@@ -183,17 +185,17 @@
 	     python-qrcode
 	     python-reportlab
 	     python-requests
-         python-stdnum
+             python-stdnum
 	     python-zeep
 	     python-vobject
 	     python-werkzeug
 	     python-xlsxwriter
 	     python-xlwt
-         python-xlrd))
+             python-xlrd
+	     python-num2words))
       (home-page "")
       (synopsis "")
       (description "")
-      (license #f)
-    )))
+      (license #f))))
 
 python-odoo
