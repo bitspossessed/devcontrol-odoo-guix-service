@@ -192,8 +192,10 @@
 	     python-xlsxwriter
 	     python-xlwt
        python-xlrd
-	     python-num2words
-       python-freezegun))
+	     python-num2words))
+      (native-inputs (
+        list python-freezegun
+      ))
       (home-page "")
       (synopsis "")
       (description "")
