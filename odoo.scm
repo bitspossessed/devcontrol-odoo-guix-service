@@ -125,6 +125,23 @@
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-26))
 
+(define-public python-delegator.py
+  (package
+    (name "python-delegator.py")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (pypi-uri "delegator.py" version))
+       (sha256
+        (base32 "06sjz2nzhvqflssw0qsf2kdxmphs4cbjwhp0kqb9prcsmgnrrk76"))))
+    (build-system pyproject-build-system)
+    (propagated-inputs (list python-pexpect))
+    (home-page "https://github.com/kennethreitz/delegator")
+    (synopsis "Subprocesses for Humans 2.0.")
+    (description "Subprocesses for Humans 2.0.")
+    (license license:expat)))
+
 (define-public python-num2words
   (package
     (name "python-num2words")
@@ -136,8 +153,8 @@
        (sha256
         (base32 "1kq948daphzcpl4islxjccza39kkpjzwwl4l8ifdg45zzcb4f1m3"))))
     (build-system pyproject-build-system)
-    (arguments (list #:tests? #f))
     (propagated-inputs (list python-docopt))
+    (native-inputs (list python-delegator.py))
     (home-page "https://github.com/savoirfairelinux/num2words")
     (synopsis "Modules to convert numbers to words. Easily extensible.")
     (description "Modules to convert numbers to words.  Easily extensible.")
